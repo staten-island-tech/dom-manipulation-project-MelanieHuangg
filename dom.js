@@ -1,20 +1,19 @@
 const DOMSelectors = {
     form: document.querySelector("#form"),
-    firstName: document.querySelector(".first-name"),
-    text: document.querySelector("#text"),
+    foodName: document.querySelector(".food-name"),
+   
 };
 
-function text(text){
-text.innerHTML = "This is a test"
-}
-
-text(DOMSelectors.text);
-
+console.log(DOMSelectors.h2s);
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
-    console.log(DOMSelectors.firstName.value);
+    console.log(DOMSelectors.foodName.value);
     DOMSelectors.h2s.forEach(
-        (el)=> (el.textContent = DOMSelectors.firstName.value)
+        (el)=> (el.textContent = DOMSelectors.foodName.value)
     );
+
+
+
+
 
 });
