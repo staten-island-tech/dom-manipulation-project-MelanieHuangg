@@ -1,7 +1,10 @@
 const DOMSelectors = {
     form: document.querySelector("#form"),
-    gameName: document.querySelector(".game-name"),
-    h2: document.querySelector("h2")
+    box: document.getElementById("container-box"),
+    // category: document.querySelector(""),
+    // imgURL: document.querySelector(""),
+    h2: document.querySelector("h2"),
+    
    
 };
 
@@ -19,7 +22,12 @@ DOMSelectors.form.addEventListener("submit", function(event){
     // document.body.appendChild(h2)
 });
 
-function makeGame (input){ //stores value of user's input
+
+DOMSelectors.box.insertAdjacentHTML("beforeend", '<p> $i{input} </p>'
+    
+)
+
+/* function makeGame (input){ //stores value of user's input
     let gameObj = {
         name: input
     }
@@ -31,6 +39,6 @@ function makeGame (input){ //stores value of user's input
 //clearing input
 function clearField (){
     DOMSelectors.gameName.value = ""
-}
+} */
 
 
