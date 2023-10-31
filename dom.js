@@ -1,29 +1,43 @@
 const DOMSelectors = {
-    form: document.querySelector("#form"),
-    box: document.getElementById("container-box"),
-    // category: document.querySelector(""),
-    // imgURL: document.querySelector(""),
-    h2: document.querySelector("h2"),
-    
-   
+    songName: document.getElementById("song-name"),
+    artistName: document.getElementById("artist-name"),
+    imageLink: document.getElementById("image-link"),
+    submitButton: document.getElementById("create"),
+    display: document.querySelector("display"),
 };
 
-console.log(DOMSelectors.h2);
-DOMSelectors.form.addEventListener("submit", function(event){
+
+
+
+    
+    // category: document.querySelector(""),
+    // imgURL: document.querySelector(""),
+
+DOMSelectors.create.addEventListener("submit", function(event){
     event.preventDefault();
-    let userInput = DOMSelectors.gameName.value; //stores user input
-    const textBox = DOMSelectors.h2;
-    const game = makeGame(userInput); //has value gameObj
-    console.log(DOMSelectors.gameName.value); 
-    textBox.textContent = game.name
+    let userInput = DOMSelectors.songName.value; //stores user input
+    let userInput2 = DOMSelectors.artistName.value;
+    let userInput3 = DOMSelectors.imageLink.value;
+
    
     // let h2 = document.createElement("h2");
     // h2.textContent = game.name;
     // document.body.appendChild(h2)
+
+    function makeCard() {
+        DOMSelectors.text.insertAdjacentHTML(
+            "beforeend", 
+            `<div class="display">
+               <h1 class="song">Title:${userInput}</h1>
+               <img src></img>
+
+            </div>`
+        )
+    }
 });
 
 
-DOMSelectors.box.insertAdjacentHTML("beforeend", '<p> $i{input} </p>'
+DOMSelectors.text.insertAdjacentHTML("beforeend", '<p> $i{input} </p>'
     
 )
 
