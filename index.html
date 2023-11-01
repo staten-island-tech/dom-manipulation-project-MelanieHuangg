@@ -4,44 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation Project</title>
+ 
 </head>
 <body>
-    <h3>Create a Song Album</h3>
-    <form action="" id="form">
 
-    <div class="display">
-        
-        <div class="first">
-        <label for="songName">Enter Song Name</label> 
-        <input type="text" id="song-name"/>
-        
+    <div class="header">
+        <h1>Create an Album</h1>
     </div>
 
-    <div class="second">
-    <label for="artistName">Enter Artist Name</label>
-    <input type="text" id="artist-name"/>
-    
-</div>
+    <div class="input-form">
+        <form action="" id="album">
 
-    <div class="image">
-    <label for="imageLink">Enter Image URL</label>
-    <input type="text" id="image-link"/>
-    
-</div>
+            <div class="first">
+                <label for="songName">Enter Song Name</label> 
+                <input type="text" id="song-name"/>
+            </div>
 
-    <button id="create">Submit</button>
+            <div class="second">
+                <label for="artistName">Enter Artist Name</label>
+                <input type="text" id="artist-name"/>
+                
+            </div>
+            
+                <div class="image">
+                <label for="imageLink">Enter Image URL</label>
+                <input type="text" id="image-link"/>
+                
+            </div>
+        </form>
 
-</div>
+        <button id="submit">Submit</button>
+        <button id="clear">Clear</button>
 
-</form>
-        
+    </div>
 
-
-
-    <h2></h2>
-    
-
-   
+    <div class="html-cards"></div>   
     
     <script src="dom.js"></script>
 

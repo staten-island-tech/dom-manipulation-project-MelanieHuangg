@@ -2,8 +2,11 @@ const DOMSelectors = {
     songName: document.getElementById("song-name"),
     artistName: document.getElementById("artist-name"),
     imageLink: document.getElementById("image-link"),
-    submitButton: document.getElementById("create"),
-    display: document.querySelector("display"),
+    submitButton: document.getElementById("submit"),
+    clearButton: document.getElementById("clear"),
+    htmlCards: document.querySelector(".html-cards"),
+
+   
 };
 
 
@@ -15,31 +18,68 @@ const DOMSelectors = {
 
 DOMSelectors.create.addEventListener("submit", function(event){
     event.preventDefault();
-    let userInput = DOMSelectors.songName.value; //stores user input
-    let userInput2 = DOMSelectors.artistName.value;
-    let userInput3 = DOMSelectors.imageLink.value;
+
+    let input = DOMSelectors.songName.value; //stores user input
+    let input2 = DOMSelectors.artistName.value;
+    let input3 = DOMSelectors.imageLink.value;
+
+    if (input && input2 && input3) {
+        const cardHTML = `
+        <div class="card">
+            <h2 class="songName">Title:${input}</h2>
+            <img src="${input3}" class="image" alt=""></img>
+            <h2 class="artist">Song By: "${input2}</h2>
+            <button class="remove">Delete</button>
+        </div>
+        `
+        create(cardHTML)
+        
+    }
+
+});
+
+DOMSelectors.clearButton.addEventListener("clear", function() {
+
+}); 
+
 
    
     // let h2 = document.createElement("h2");
     // h2.textContent = game.name;
     // document.body.appendChild(h2)
 
-    function makeCard() {
-        DOMSelectors.text.insertAdjacentHTML(
-            "beforeend", 
+    function makeHtmlCard() {
+        DOMSelectors.container.insertAdjacentHTML(
+            "afterbegin", 
             `<div class="display">
+               <image src></image>
                <h1 class="song">Title:${userInput}</h1>
-               <img src></img>
+               <img src="${userInput3}" class="image" alt=""></img>
+               <h2 class="artist">Song By: "${userInput2}</h2>
+               <button class="remove">Delete</button>
 
             </div>`
-        )
+        );
     }
-});
+
+    function erase() {
+        let deletes = document.querySelectorAll(".remove");
+        deletes.forEach((eachDelete) => {
+            eachDelete.addEventListener("click", (event) => {
+                event.target.parentElement.remove();
+            });
+        });
+    }
+
+    makeCard();
+    erase();
 
 
-DOMSelectors.text.insertAdjacentHTML("beforeend", '<p> $i{input} </p>'
+
+
+// DOMSelectors.text.insertAdjacentHTML("beforeend", '<p> $i{input} </p>'
     
-)
+// )
 
 /* function makeGame (input){ //stores value of user's input
     let gameObj = {
