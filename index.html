@@ -15,30 +15,22 @@
     <div class="input-form">
         <form action="" id="album">
 
-            <div class="first">
-                <label for="songName">Enter Song Name</label> 
-                <input type="text" id="song-name"/>
-            </div>
+            <label for="songName">Enter Song Name</label> 
+            <input type="text" id="song-name"/>
+        
+            <label for="artistName">Enter Artist Name</label>
+            <input type="text" id="artist-name"/>
 
-            <div class="second">
-                <label for="artistName">Enter Artist Name</label>
-                <input type="text" id="artist-name"/>
+            <label for="imageLink">Image</label>
+            <input type="text" id="image-link"/>
+
+            <input type="submit" value="Create" id="submit-button">
                 
-            </div>
-            
-                <div class="image">
-                <label for="imageLink">Enter Image URL</label>
-                <input type="text" id="image-link"/>
-                
-            </div>
         </form>
-
-        <button id="submit">Submit</button>
-        <button id="clear">Clear</button>
-
     </div>
 
-    <div class="html-cards"></div>   
+    <div id="box">
+    </div>  
     
     <script src="dom.js"></script>
 

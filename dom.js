@@ -1,78 +1,60 @@
 const DOMSelectors = {
+    form: document.querySelector("#album"),
     songName: document.getElementById("song-name"),
     artistName: document.getElementById("artist-name"),
     imageLink: document.getElementById("image-link"),
-    submitButton: document.getElementById("submit"),
-    clearButton: document.getElementById("clear"),
-    htmlCards: document.querySelector(".html-cards"),
-
+    box: document.querySelector("#box"),
    
 };
-
-
-
-
     
     // category: document.querySelector(""),
     // imgURL: document.querySelector(""),
 
-DOMSelectors.create.addEventListener("submit", function(event){
+DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
-
-    let input = DOMSelectors.songName.value; //stores user input
-    let input2 = DOMSelectors.artistName.value;
-    let input3 = DOMSelectors.imageLink.value;
-
-    if (input && input2 && input3) {
-        const cardHTML = `
-        <div class="card">
-            <h2 class="songName">Title:${input}</h2>
-            <img src="${input3}" class="image" alt=""></img>
-            <h2 class="artist">Song By: "${input2}</h2>
-            <button class="remove">Delete</button>
-        </div>
-        `
-        create(cardHTML)
-        
-    }
-
+    const card = {
+        songName: DOMSelectors.songName.value,
+        artistName: DOMSelectors.artistName.value,
+        imageLink: DOMSelectors.imageLink.value,
+    };
+    injectCard(card);
+    clearFields();
 });
 
-DOMSelectors.clearButton.addEventListener("clear", function() {
+function injectCard(card) {
+    const cardHTML = `
+    <div class="album1">
+       <div class="card">
+          <h1 class="name">Title:${card.songName}</h1>
+          <img src="${card.imageLink}" class="card-img" alt="">
+          <h2 class="artist">Song By:${card.artistName}</h2>
+       </div> 
+       <button class="delete-btn" onclick="deleteCard(this)">Delete</button>
+    </div>
+    `;
 
-}); 
+    DOMSelectors.box.insertAdjacentHTML("beforeend", cardHTML);
+
+};
+
+const images = document.querySelectorAll('.card-img');
 
 
-   
+    function clearFields() {
+        DOMSelectors.songName.value = "";
+        DOMSelectors.imageLink.value = "";
+        DOMSelectors.artistName.value = "";
+    };
+    
+    function removeCard(element) {
+        element.parentElement.remove();
+    };
+
+
+
     // let h2 = document.createElement("h2");
     // h2.textContent = game.name;
     // document.body.appendChild(h2)
-
-    function makeHtmlCard() {
-        DOMSelectors.container.insertAdjacentHTML(
-            "afterbegin", 
-            `<div class="display">
-               <image src></image>
-               <h1 class="song">Title:${userInput}</h1>
-               <img src="${userInput3}" class="image" alt=""></img>
-               <h2 class="artist">Song By: "${userInput2}</h2>
-               <button class="remove">Delete</button>
-
-            </div>`
-        );
-    }
-
-    function erase() {
-        let deletes = document.querySelectorAll(".remove");
-        deletes.forEach((eachDelete) => {
-            eachDelete.addEventListener("click", (event) => {
-                event.target.parentElement.remove();
-            });
-        });
-    }
-
-    makeCard();
-    erase();
 
 
 
