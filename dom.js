@@ -12,17 +12,18 @@ const DOMSelectors = {
 
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
-    const card = {
+    let card = {
         songName: DOMSelectors.songName.value,
         artistName: DOMSelectors.artistName.value,
         imageLink: DOMSelectors.imageLink.value,
     };
-    injectCard(card);
+    injectObj(card);
     clearFields();
+    removeCard(form);
 });
 
-function injectCard(card) {
-    const cardHTML = `
+function injectObj(card) { 
+    let cardHTML = `
     <div class="album1">
        <div class="card">
           <h1 class="name">Title:${card.songName}</h1>
@@ -37,18 +38,15 @@ function injectCard(card) {
 
 };
 
-const images = document.querySelectorAll('.card-img');
-
-
-    function clearFields() {
-        DOMSelectors.songName.value = "";
-        DOMSelectors.imageLink.value = "";
-        DOMSelectors.artistName.value = "";
-    };
+function clearFields() {
+    DOMSelectors.songName.value = "";
+    DOMSelectors.imageLink.value = "";
+    DOMSelectors.artistName.value = "";
+};
     
-    function removeCard(element) {
-        element.parentElement.remove();
-    };
+function removeCard(form) {
+    form.parentElement.remove();
+};
 
 
 
