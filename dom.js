@@ -1,7 +1,7 @@
 const DOMSelectors = {
     form: document.querySelector("#album"),
-    songName: document.getElementById("song-name"),
-    artistName: document.getElementById("artist-name"),
+    characterName: document.getElementById("character-name"),
+    gameName: document.getElementById("game-name"),
     imageLink: document.getElementById("image-link"),
     box: document.querySelector("#box"),
    
@@ -13,22 +13,21 @@ const DOMSelectors = {
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
     let card = {
-        songName: DOMSelectors.songName.value,
-        artistName: DOMSelectors.artistName.value,
+        characterName: DOMSelectors.characterName.value,
+        gameName: DOMSelectors.gameName.value,
         imageLink: DOMSelectors.imageLink.value,
     };
     injectObj(card);
     clearFields();
-    removeCard(form);
 });
 
 function injectObj(card) { 
     let cardHTML = `
     <div class="album1">
        <div class="card">
-          <h1 class="name">Title:${card.songName}</h1>
+          <h1 class="name">Character:${card.characterName}</h1>
           <img src="${card.imageLink}" class="card-img" alt="">
-          <h2 class="artist">Song By:${card.artistName}</h2>
+          <h2 class="game">Game:${card.gameName}</h2>
        </div> 
        <button class="delete-btn" onclick="deleteCard(this)">Delete</button>
     </div>
@@ -39,16 +38,25 @@ function injectObj(card) {
 };
 
 function clearFields() {
-    DOMSelectors.songName.value = "";
+    DOMSelectors.characterName.value = "";
     DOMSelectors.imageLink.value = "";
-    DOMSelectors.artistName.value = "";
-};
-    
-function removeCard(form) {
-    form.parentElement.remove();
+    DOMSelectors.gameName.value = "";
 };
 
+function deleteCard(remove) {
+    remove.parentElement.remove();
+    }
 
+// function deleteCard() {
+//     console.log("city GIRLS UPPPPPPPPPPPPP")
+//     let deletes = document.querySelectorAll(".delete-btn");
+//     deletes.forEach((eachRemove) => {
+//         console.log(eachRemove)
+//         eachRemove.addEventListener("click", (event) => {
+//             event.target.parentElement.remove();
+//         });
+//     });
+// };
 
     // let h2 = document.createElement("h2");
     // h2.textContent = game.name;

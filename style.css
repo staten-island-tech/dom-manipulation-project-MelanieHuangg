@@ -1,0 +1,78 @@
+html, 
+body, 
+*{
+    padding: 0; 
+    margin: 0px; 
+    box-sizing: border-box;
+    
+}
+
+.header{
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #12486e;
+    font-family: 'Pixelify Sans', sans-serif;
+
+}
+
+body {
+    text-align: center;
+    align-items: center;
+    background-color: #7BAFD4;
+    margin: 50px;
+    flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    color: #12486e ;
+}
+
+#album{
+    font-size: 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+
+}
+
+#box{
+    margin: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+.card img {
+    width: 400px; 
+    height: 400px; 
+    margin-bottom: 10px;
+}
+
+.name{
+    margin-bottom: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+
+}
+
+.game {
+    margin-bottom: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+
+}
+
+.submit-button{
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.5 rem;
+    font-family: 'IBM Plex Mono', monospace;
+
+}
+
+.delete-btn{
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.5 rem;
+    margin-bottom: 100px;
+    font-family: 'IBM Plex Mono', monospace;
+
+}
+
