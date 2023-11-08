@@ -23,14 +23,12 @@ DOMSelectors.form.addEventListener("submit", function(event){
 
 function injectObj(card) { 
     let cardHTML = `
-    <div class="album1">
        <div class="card">
           <h1 class="name">Character:${card.characterName}</h1>
           <img src="${card.imageLink}" class="card-img" alt="">
           <h2 class="game">Game:${card.gameName}</h2>
+          <button class="delete-btn" onclick="deleteCard(this)">Delete</button>
        </div> 
-       <button class="delete-btn" onclick="deleteCard(this)">Delete</button>
-    </div>
     `;
 
     DOMSelectors.box.insertAdjacentHTML("beforeend", cardHTML);
