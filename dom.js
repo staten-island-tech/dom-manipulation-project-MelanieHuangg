@@ -45,22 +45,11 @@ function deleteCard(remove) {
     remove.parentElement.remove();
     }
 
-// function deleteCard() {
-//     console.log("city GIRLS UPPPPPPPPPPPPP")
-//     let deletes = document.querySelectorAll(".delete-btn");
-//     deletes.forEach((eachRemove) => {
-//         console.log(eachRemove)
-//         eachRemove.addEventListener("click", (event) => {
-//             event.target.parentElement.remove();
-//         });
-//     });
-// };
-
-    // let h2 = document.createElement("h2");
-    // h2.textContent = game.name;
-    // document.body.appendChild(h2)
 
 
+// let h2 = document.createElement("h2");
+// h2.textContent = game.name;
+// document.body.appendChild(h2)
 
 
 // DOMSelectors.text.insertAdjacentHTML("beforeend", '<p> $i{input} </p>'
