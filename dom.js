@@ -19,6 +19,7 @@ DOMSelectors.form.addEventListener("submit", function(event){
     };
     injectObj(card);
     clearFields();
+    deleteCard();
 });
 
 function injectObj(card) { 
@@ -27,7 +28,7 @@ function injectObj(card) {
           <h1 class="name">Character:${card.characterName}</h1>
           <img src="${card.imageLink}" class="card-img" alt="">
           <h2 class="game">Game:${card.gameName}</h2>
-          <button class="delete-btn" onclick="deleteCard(this)">Delete</button>
+          <button class="delete-btn">Delete</button>
        </div> 
     `;
 
@@ -41,9 +42,14 @@ function clearFields() {
     DOMSelectors.gameName.value = "";
 };
 
-function deleteCard(remove) {
-    remove.parentElement.remove();
-    }
+function deleteCard() {
+    document.querySelectorAll(".delete-btn").forEach((button) => {
+        button.addEventListener("click", function(event){
+            event.target.parentElement.remove();
+        });
+    });
+    };
+    
 
 
 
